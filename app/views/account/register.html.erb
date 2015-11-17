@@ -26,7 +26,8 @@
   <p><%= custom_field_tag_with_label :user, value %></p>
 <% end %>
 
-<%= recaptcha_tags :public_key => Setting.plugin_recaptcha['recaptcha_public_key'], :ssl => true %>
+<p><label for="stupid_captcha_question"><%= t('field_stupid_captcha_question') %></label><span id="stupid_captcha_question"><%= Setting.plugin_stupid_captcha['stupid_captcha_question'] %></span></p>
+<p><%= f.text_field :stupid_captcha_answer, :required => true %></p>
 </div>
 
 <%= submit_tag l(:button_submit) %>

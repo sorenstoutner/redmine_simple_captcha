@@ -1,10 +1,10 @@
 <fieldset>
   <legend>Plugin Settings</legend>
-  <p>Get a <a href="http://www.google.com/recaptcha" target=_blank>recaptcha keypair</a> and enter it here:</p>
+  <p>Choice a question and the expected answer</p>
   <p>
-    <label>Public Key</label><%= text_field_tag 'settings[recaptcha_public_key]', settings['recaptcha_public_key'] %>
+    <label>question</label><%= text_field_tag 'settings[stupid_captcha_question]', settings['stupid_captcha_question'] %>
   </p>
   <p>
-    <label>Private Key</label><%= text_field_tag 'settings[recaptcha_private_key]', settings['recaptcha_private_key'] %>
+    <label>answer</label><%= text_field_tag 'settings[stupid_captcha_answer]', settings['stupid_captcha_answer'] %>
   </p>
 </fieldset>

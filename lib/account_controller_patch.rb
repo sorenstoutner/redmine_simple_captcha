@@ -1,4 +1,4 @@
-module AccountControllerRecaptchaPatch
+module AccountControllerStupidCaptchaPatch
   def self.included(base)
     base.class_eval do
       def register
@@ -27,7 +27,7 @@ module AccountControllerRecaptchaPatch
             unless user_params[:identity_url].present? && user_params[:password].blank? && user_params[:password_confirmation].blank?
               @user.password, @user.password_confirmation = user_params[:password], user_params[:password_confirmation]
             end
-            if verify_recaptcha(:model => @user, :private_key => Setting.plugin_recaptcha['recaptcha_private_key'])
+            if user_params[:stupid_captcha_answer] == Setting.plugin_stupid_captcha['stupid_captcha_answer']
               case Setting.self_registration
               when '1'
                 register_by_email_activation(@user)
@@ -37,7 +37,7 @@ module AccountControllerRecaptchaPatch
                 register_manually_by_administrator(@user)
               end
             else
-              flash.delete(:recaptcha_error)
+              flash.delete(:stupid_captcha_error)
             end
           end
         end
@@ -46,4 +46,4 @@ module AccountControllerRecaptchaPatch
   end
 end
 
-AccountController.send(:include, AccountControllerRecaptchaPatch)
+AccountController.send(:include, AccountControllerStupidCaptchaPatch)
