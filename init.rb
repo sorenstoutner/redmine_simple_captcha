@@ -1,5 +1,5 @@
-require 'account_controller_patch'
-require 'user_patch'
+require_relative './lib/account_controller_patch'
+require_relative './lib/user_patch'
 
 Redmine::Plugin.register :stupid_captcha do
   name 'stupid captcha plugin'

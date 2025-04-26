@@ -1,7 +1,7 @@
-Stupid captcha Redmine 2.x plugin
+Stupid captcha Redmine plugin
 =================================
 
-Redmine 2.x plugin that adds a stupid captcha to the account registration page.
+Redmine plugin that adds a stupid captcha to the account registration page.
 
 - Installation: just clone it to your plugins directory, run 'bundle' and restart Redmine.
 - Configuration: on the plugin setting page, enter your captcha word.
