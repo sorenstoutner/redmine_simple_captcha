@@ -1,7 +1,7 @@
 require_dependency 'project'
 require_dependency 'principal'
 require_dependency 'user'
-module UserStupidCaptchaPatch
+module UserPatch
   def self.included(base)
     base.send(:include, InstanceMethods)
 #    base.class_eval do
@@ -16,4 +16,4 @@ module UserStupidCaptchaPatch
   end
 end
 
-User.send(:include, UserStupidCaptchaPatch)
+User.send(:include, UserPatch)

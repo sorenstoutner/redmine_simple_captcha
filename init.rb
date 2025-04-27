@@ -1,13 +1,13 @@
 require_relative './lib/account_controller_patch'
 require_relative './lib/user_patch'
 
-Redmine::Plugin.register :stupid_captcha do
-  name 'stupid captcha plugin'
-  author 'Mehdi Abaakouk'
+Redmine::Plugin.register :redmine_simple_captcha do
+  name 'Stupid CAPTCHA'
+  author 'Soren Stoutner'
   description 'Adds a very simple captcha to the account registration page'
-  version '1.0.0'
-  url 'https://github.com/sileht/redmine-stupid-captcha'
-  author_url 'https://github.com/sileht'
+  version '1.0'
+  url 'https://github.com/sorenstoutner/redmine-stupid-captcha'
+  author_url 'https://github.com/sorenstoutner'
   settings({
      :partial => 'settings/settings',
      :default => {
