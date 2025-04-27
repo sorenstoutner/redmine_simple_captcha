@@ -10,7 +10,7 @@ module UserPatch
   end
 
   module InstanceMethods
-    def stupid_captcha_answer
+    def simple_captcha_answer
       nil
     end
   end

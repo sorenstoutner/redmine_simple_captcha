@@ -27,7 +27,7 @@ module AccountControllerPatch
             unless user_params[:identity_url].present? && user_params[:password].blank? && user_params[:password_confirmation].blank?
               @user.password, @user.password_confirmation = user_params[:password], user_params[:password_confirmation]
             end
-            if user_params[:stupid_captcha_answer] == Setting.plugin_stupid_captcha['stupid_captcha_answer']
+            if user_params[:simple_captcha_answer] == Setting.plugin_redmine_simple_captcha['simple_captcha_answer']
               case Setting.self_registration
               when '1'
                 register_by_email_activation(@user)
@@ -37,7 +37,7 @@ module AccountControllerPatch
                 register_manually_by_administrator(@user)
               end
             else
-              flash.delete(:stupid_captcha_error)
+              flash.delete(:simple_captcha_error)
             end
           end
         end

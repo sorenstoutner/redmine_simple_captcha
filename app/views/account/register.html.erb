@@ -22,8 +22,8 @@
   <p><%= custom_field_tag_with_label :user, value %></p>
 <% end %>
 
-<p><label for="stupid_captcha_question"><%= t('field_stupid_captcha_question') %></label><span id="stupid_captcha_question"><%= Setting.plugin_stupid_captcha['stupid_captcha_question'] %></span></p>
-<p><%= f.text_field :stupid_captcha_answer, :required => true %></p>
+<p><label for="simple_captcha_question"><%= t('field_simple_captcha_question') %></label><span id="simple_captcha_question"><%= Setting.plugin_redmine_simple_captcha['simple_captcha_question'] %></span></p>
+<p><%= f.text_field :simple_captcha_answer, :required => true %></p>
 </div>
 
 <%= submit_tag l(:button_submit) %>
