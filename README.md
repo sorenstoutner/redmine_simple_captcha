@@ -1,9 +1,11 @@
-Stupid captcha Redmine plugin
-=================================
+Simple CAPTCHA Redmine plugin
+=============================
 
-Redmine plugin that adds a stupid captcha to the account registration page.
+This Redmine plugin that adds a very simple CAPTCHA to the account registration page.  It lets you set a CAPTCHA question and answer.  The question and answer are the same for all people attempting to register on your site, and only allows registration for someone who fills out the CAPTCHA answer field with the same value you set in the plugin settings.
 
-- Installation: just clone it to your plugins directory, run 'bundle' and restart Redmine.
-- Configuration: on the plugin setting page, enter your captcha word.
-- Compatibility: tested with Redmine 2.3, but I assume it works with older versions as well.
-- Copyright: MIT License
+For example, you can set the CAPTCHA question to be a mathamatical equation requesting the user types the answer.  Or, you can set it to be a logical puzzle.  You can even instruct the user to simply type a specific word in the answer.
+
+Obviously, this will not prevent sophisticated registration attacks.  But it gets rid of the low-hanging fruit of automatic registrations, particularly those who just want to flood a target email address with spam.
+
+- Installation: Install to your plugins directory and restart Redmine.
+- Configuration: On the plugin setting page, create your CAPTCHA question and answer.
